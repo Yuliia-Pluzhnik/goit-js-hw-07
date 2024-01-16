@@ -29,7 +29,6 @@ const images = [
 ];
 
 const galleryList = document.querySelector(`.gallery`);
-console.log(galleryList);
 
 const galleryItem = images.map(({url, alt}) => {
   const img = document.createElement("img");
@@ -38,10 +37,10 @@ const galleryItem = images.map(({url, alt}) => {
   return `<li class = "gallery-item"> ${img.outerHTML}</li>`;
 });
 
+const galleryItemsString = galleryItem.join("");
 galleryList.style.display = "flex";
 galleryList.style.gap = "24px"
 
-console.log(galleryItem);
-galleryList.insertAdjacentHTML("beforeend", galleryItem);
+galleryList.insertAdjacentHTML("beforeend", galleryItemsString);
 
 

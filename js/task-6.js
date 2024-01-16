@@ -8,10 +8,11 @@ const btnCreate = document.querySelector('[data-create]');
 const btnDestroy = document.querySelector('[data-destroy]');
 const boxes = document.querySelector('#boxes');
 function destroyEl() {
-  boxes.textContent = '';
+  boxes.innerHTML = '';
 }
 function createBoxes(amount) {
   destroyEl();
+  Number(amount);
   for (let i = 0; i < amount; i++) {
     let size = 30 + 10 * i;
     const divBox = document.createElement('div');
@@ -22,7 +23,7 @@ function createBoxes(amount) {
 }
 
 btnCreate.addEventListener('click', () => {
-  if (1 <= formInput.value <= 100) {
+  if (1 <= formInput.value && formInput.value <= 100) {
     createBoxes(formInput.value);
   }
 });
